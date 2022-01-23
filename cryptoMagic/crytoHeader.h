@@ -29,3 +29,5 @@ void decryptFile(char* fileName);
 char* encryptionScheme(char ch);
 int HexadecimalTodecimal(char* hexaDecimalNumber);
 char decryptionScheme(char* str, int index);
+char* decimalToHexadecimal(int num);
+

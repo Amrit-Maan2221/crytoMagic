@@ -119,7 +119,7 @@ void encryptFile(char* fileName)
 		int howManyRead = 0;
 		// as long as we are reading at least one character (indicated by the return value
 		// from fread), keep going
-		if ((howManyRead = fread(memBlock, sizeof(char), MAX_LINE_LENGTHS, fpts)) != 0)
+		if ((howManyRead = fread(memBlock, sizeof(char), MAX_LINE_LENGTH, fpts)) != 0)
 		{
 			for (int index = 0; index < howManyRead; index++)
 			{
@@ -177,9 +177,8 @@ char* encryptionScheme(char ch)
 		{
 			outChar = (outChar - 32) + 144;
 		}
-		char buffer[3];
-		itoa(outChar, buffer, 16);   // here 16 means Hexadecimal
-		return buffer;
+		return decimalToHexadecimal(outChar);  // here 16 means Hexadecimal
+
 	}
 
 }

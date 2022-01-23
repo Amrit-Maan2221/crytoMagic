@@ -44,6 +44,38 @@ int HexadecimalTodecimal(char* hexaDecimalNumber)
 
 
 
+// Function Name: decimalToHexadecimal
+// Description	: Convert decimal Number to HexaDecimal Number
+// Parameter	: int num-> The decimal Number which is to be converted to hexadecimal Number
+// Return		: char* hexaDecimalNumber 
+char* decimalToHexadecimal(int num)
+{
+
+	int quotient = num;
+	int remainder = 0;
+	int j = 1;
+	char hexadecimalNum[3];
+	hexadecimalNum[2] = '\0';
+	
+	while (quotient != 0)
+	{
+		remainder = quotient % 16;
+		if (remainder < 10)
+		{
+			hexadecimalNum[j--] = 48 + remainder;
+		}
+		else
+		{
+			hexadecimalNum[j--] = 55 + remainder;
+		}
+		quotient = quotient / 16;
+	}
+
+	return hexadecimalNum;
+}
+
+
+
 
 // Function Name: warnAboutCommandLineError
 // Description	: Inform user how to use terminal correctly to run the program
